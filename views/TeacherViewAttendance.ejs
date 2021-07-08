@@ -1,0 +1,92 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarT") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarTeacher") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main" style="padding-bottom: 30px;margin-bottom: 30px;">
+            <h2 style="padding-top: 20px;">Statistics</h2>
+            <%
+                let it = [];
+                let cse = [];
+
+                for(let i=0;i<att.length;i++){
+                    if(att[i].branch=="IT"){
+                        it.push(att[i]);
+                    }
+                    else{
+                        cse.push(att[i]);
+                    }
+                }
+
+                let itsubs = {};
+                for(let i=0;i<it.length;i++){
+                    if(itsubs[it[i].subjectname]!=true){
+                        itsubs[it[i].subjectname]=true;
+                    }
+                }
+
+                let csesubs = {};
+                for(let i=0;i<cse.length;i++){
+                    if(csesubs[cse[i].subjectname]!=true){
+                        csesubs[cse[i].subjectname]=true;
+                    }
+                }
+
+                let itsubsarr = Object.keys(itsubs);
+                itsubsarr.sort();
+
+                let csesubsarr = Object.keys(csesubs);
+                csesubsarr.sort();
+
+                let itobj = {};
+                for(let i=0;i<itsubsarr.length;i++){
+                    itobj[itsubsarr[i]]=[0,0,0,0,0,0,0,0,0,0,0,0];
+                }
+
+                let cseobj = {};
+                for(let i=0;i<csesubsarr.length;i++){
+                    cseobj[csesubsarr[i]]=[0,0,0,0,0,0,0,0,0,0,0,0];
+                }
+                
+
+                for(let i=0;i<it.length;i++){
+                    itobj[it[i].subjectname][it[i].date.getMonth()]++;
+                }
+
+                for(let i=0;i<cse.length;i++){
+                    cseobj[cse[i].subjectname][cse[i].date.getMonth()]++;
+                }
+            %>
+
+            <%
+                for(let i=0;i<itsubsarr.length;i++){%>
+                    <div class="teacher_att_sub">
+                        <h5><%= itsubsarr[i] %> (IT)</h5>
+                        <div class="datait" style="display: none;"><%= itobj[itsubsarr[i]] %></div>
+                        <div id="containerit<%= i %>" style="height: 60vh;"></div>
+                    </div>
+                <%}
+            %>
+
+            <%
+                for(let i=0;i<csesubsarr.length;i++){%>
+                    <div class="teacher_att_sub">
+                        <h5><%= csesubsarr[i] %> (CSE)</h5>
+                        <div class="datacse" style="display: none;"><%= cseobj[csesubsarr[i]] %></div>
+                        <div id="containercse<%= i %>" style="height: 60vh;"></div>
+                    </div>
+                <%}
+            %>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[2].classList.add("active_sidebar");
+</script>
+<script src="scripts/TeacherViewAttendance.js" type="text/javascript"></script>
+</html>

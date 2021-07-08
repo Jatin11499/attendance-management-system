@@ -1,0 +1,439 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarS") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarStudent") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main" style="margin-bottom: 30px;padding-bottom: 30px;">
+            <h2 style="padding-top: 20px;">Your Attendance Status</h2>
+            <%
+                let d = new Date();
+                let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            %>
+            <h4 style="padding-bottom: 10px;">Month: <%= months[d.getMonth()] %> (<%= d.getFullYear() %>)</h4>
+
+            <div id="carouselControls" class="carousel slide" data-ride="carousel"  data-interval="false">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <p class="btn btn-light btn-lg">
+                            Period Time: <b class="time">08:00-08:55</b>
+                        </p>
+                        <div class="card-body">
+                            <div class="day_title">
+                                <p>Sun</p>
+                                <p>Mon</p>
+                                <p>Tues</p>
+                                <p>Wed</p>
+                                <p>Thur</p>
+                                <p>Fri</p>
+                                <p>Sat</p>
+                            </div>
+                            <div class="student_view_main">
+                                <%
+                                    let fd = new Date(d.getFullYear(), d.getMonth(), 1);
+                                    let dayfd = fd.getDay();
+                                    
+                                    for(let i=0;i<=30+dayfd;i++){
+                                        if(i%7==0 && i!=0){%>
+                                            <br>
+                                        <%}
+                                        
+                                        if(i<dayfd){%>
+                                            <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">08:00-08:55</b></div>
+                                        <%}
+                                        else{
+                                            if(i%7==0){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">08:00-08:55</b></div>
+                                                <%}
+                                            else if(i%7==1){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Monday[0] %></h5><b class="cell_time">08:00-08:55</b></div>
+                                                <%}
+                                            else if(i%7==2){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Tuesday[0] %></h5><b class="cell_time">08:00-08:55</b></div>
+                                                <%}
+                                            else if(i%7==3){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Wednesday[0] %></h5><b class="cell_time">08:00-08:55</b></div>
+                                                <%}
+                                            else if(i%7==4){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Thursday[0] %></h5><b class="cell_time">08:00-08:55</b></div>
+                                                <%}
+                                            else if(i%7==5){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Friday[0] %></h5><b class="cell_time">08:00-08:55</b></div>
+                                                <%}
+                                            else if(i%7==6){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Saturday[0] %></h5><b class="cell_time">08:00-08:55</b></div>
+                                                <%}
+                                        }
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <p class="btn btn-light btn-lg">
+                            Period Time: <b class="time">08:55-09:50</b>
+                        </p>
+                        <div class="card-body">
+                            <div class="day_title">
+                                <p>Sun</p>
+                                <p>Mon</p>
+                                <p>Tues</p>
+                                <p>Wed</p>
+                                <p>Thur</p>
+                                <p>Fri</p>
+                                <p>Sat</p>
+                            </div>
+                            <div class="student_view_main">
+                                <%
+                                    for(let i=0;i<=30+dayfd;i++){
+                                        if(i%7==0 && i!=0){%>
+                                            <br>
+                                        <%}
+                                        
+                                        if(i<dayfd){%>
+                                            <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">08:55-09:50</b></div>
+                                        <%}
+                                        else{
+                                            if(i%7==0){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">08:55-09:50</b></div>
+                                                <%}
+                                            else if(i%7==1){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Monday[1] %></h5><b class="cell_time">08:55-09:50</b></div>
+                                                <%}
+                                            else if(i%7==2){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Tuesday[1] %></h5><b class="cell_time">08:55-09:50</b></div>
+                                                <%}
+                                            else if(i%7==3){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Wednesday[1] %></h5><b class="cell_time">08:55-09:50</b></div>
+                                                <%}
+                                            else if(i%7==4){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Thursday[1] %></h5><b class="cell_time">08:55-09:50</b></div>
+                                                <%}
+                                            else if(i%7==5){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Friday[1] %></h5><b class="cell_time">08:55-09:50</b></div>
+                                                <%}
+                                            else if(i%7==6){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Saturday[1] %></h5><b class="cell_time">08:55-09:50</b></div>
+                                                <%}
+                                        }
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <p class="btn btn-light btn-lg">
+                            Period Time: <b class="time">09:50-10:45</b>
+                        </p>
+                    
+                        <div class="card-body">
+                            <div class="day_title">
+                                <p>Sun</p>
+                                <p>Mon</p>
+                                <p>Tues</p>
+                                <p>Wed</p>
+                                <p>Thur</p>
+                                <p>Fri</p>
+                                <p>Sat</p>
+                            </div>
+                            <div class="student_view_main">
+                                <%
+                                    for(let i=0;i<=30+dayfd;i++){
+                                        if(i%7==0 && i!=0){%>
+                                            <br>
+                                        <%}
+                                        
+                                        if(i<dayfd){%>
+                                            <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">09:50-10:45</b></div>
+                                        <%}
+                                        else{
+                                            if(i%7==0){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">09:50-10:45</b></div>
+                                                <%}
+                                            else if(i%7==1){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Monday[2] %></h5><b class="cell_time">09:50-10:45</b></div>
+                                                <%}
+                                            else if(i%7==2){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Tuesday[2] %></h5><b class="cell_time">09:50-10:45</b></div>
+                                                <%}
+                                            else if(i%7==3){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Wednesday[2] %></h5><b class="cell_time">09:50-10:45</b></div>
+                                                <%}
+                                            else if(i%7==4){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Thursday[2] %></h5><b class="cell_time">09:50-10:45</b></div>
+                                                <%}
+                                            else if(i%7==5){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Friday[2] %></h5><b class="cell_time">09:50-10:45</b></div>
+                                                <%}
+                                            else if(i%7==6){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Saturday[2] %></h5><b class="cell_time">09:50-10:45</b></div>
+                                                <%}
+                                        }
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <p class="btn btn-light btn-lg">
+                            Period Time: <b class="time">11:00-11:55</b>
+                        </p>
+                        
+                        <div class="card-body">
+                            <div class="day_title">
+                                <p>Sun</p>
+                                <p>Mon</p>
+                                <p>Tues</p>
+                                <p>Wed</p>
+                                <p>Thur</p>
+                                <p>Fri</p>
+                                <p>Sat</p>
+                            </div>
+                            <div class="student_view_main">
+                                <%
+                                    for(let i=0;i<=30+dayfd;i++){
+                                        if(i%7==0 && i!=0){%>
+                                            <br>
+                                        <%}
+                                        
+                                        if(i<dayfd){%>
+                                            <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">11:00-11:55</b></div>
+                                        <%}
+                                        else{
+                                            if(i%7==0){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">11:00-11:55</b></div>
+                                                <%}
+                                            else if(i%7==1){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Monday[3] %></h5><b class="cell_time">11:00-11:55</b></div>
+                                                <%}
+                                            else if(i%7==2){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Tuesday[3] %></h5><b class="cell_time">11:00-11:55</b></div>
+                                                <%}
+                                            else if(i%7==3){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Wednesday[3] %></h5><b class="cell_time">11:00-11:55</b></div>
+                                                <%}
+                                            else if(i%7==4){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Thursday[3] %></h5><b class="cell_time">11:00-11:55</b></div>
+                                                <%}
+                                            else if(i%7==5){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Friday[3] %></h5><b class="cell_time">11:00-11:55</b></div>
+                                                <%}
+                                            else if(i%7==6){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Saturday[3] %></h5><b class="cell_time">11:00-11:55</b></div>
+                                                <%}
+                                        }
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <p class="btn btn-light btn-lg">
+                            Period Time: <b class="time">11:55-12:50</b>
+                        </p>
+                        
+                        <div class="card-body">
+                            <div class="day_title">
+                                <p>Sun</p>
+                                <p>Mon</p>
+                                <p>Tues</p>
+                                <p>Wed</p>
+                                <p>Thur</p>
+                                <p>Fri</p>
+                                <p>Sat</p>
+                            </div>
+                            <div class="student_view_main">
+                                <%
+                                    for(let i=0;i<=30+dayfd;i++){
+                                        if(i%7==0 && i!=0){%>
+                                            <br>
+                                        <%}
+                                        
+                                        if(i<dayfd){%>
+                                            <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">11:55-12:50</b></div>
+                                        <%}
+                                        else{
+                                            if(i%7==0){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">11:55-12:50</b></div>
+                                                <%}
+                                            else if(i%7==1){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Monday[4] %></h5><b class="cell_time">11:55-12:50</b></div>
+                                                <%}
+                                            else if(i%7==2){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Tuesday[4] %></h5><b class="cell_time">11:55-12:50</b></div>
+                                                <%}
+                                            else if(i%7==3){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Wednesday[4] %></h5><b class="cell_time">11:55-12:50</b></div>
+                                                <%}
+                                            else if(i%7==4){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Thursday[4] %></h5><b class="cell_time">11:55-12:50</b></div>
+                                                <%}
+                                            else if(i%7==5){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Friday[4] %></h5><b class="cell_time">11:55-12:50</b></div>
+                                                <%}
+                                            else if(i%7==6){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Saturday[4] %></h5><b class="cell_time">11:55-12:50</b></div>
+                                                <%}
+                                        }
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <p class="btn btn-light btn-lg">
+                            Period Time: <b class="time">12:50-13:45</b>
+                        </p>
+                    
+                        <div class="card-body">
+                            <div class="day_title">
+                                <p>Sun</p>
+                                <p>Mon</p>
+                                <p>Tues</p>
+                                <p>Wed</p>
+                                <p>Thur</p>
+                                <p>Fri</p>
+                                <p>Sat</p>
+                            </div>
+                            <div class="student_view_main">
+                                <%
+                                    for(let i=0;i<=30+dayfd;i++){
+                                        if(i%7==0 && i!=0){%>
+                                            <br>
+                                        <%}
+                                        
+                                        if(i<dayfd){%>
+                                            <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">12:50-13:45</b></div>
+                                        <%}
+                                        else{
+                                            if(i%7==0){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname">-</h5><b class="cell_time">12:50-13:45</b></div>
+                                                <%}
+                                            else if(i%7==1){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Monday[5] %></h5><b class="cell_time">12:50-13:45</b></div>
+                                                <%}
+                                            else if(i%7==2){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Tuesday[5] %></h5><b class="cell_time">12:50-13:45</b></div>
+                                                <%}
+                                            else if(i%7==3){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Wednesday[5] %></h5><b class="cell_time">12:50-13:45</b></div>
+                                                <%}
+                                            else if(i%7==4){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Thursday[5] %></h5><b class="cell_time">12:50-13:45</b></div>
+                                                <%}
+                                            else if(i%7==5){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Friday[5] %></h5><b class="cell_time">12:50-13:45</b></div>
+                                                <%}
+                                            else if(i%7==6){%>
+                                                <div><p><%= i+1-dayfd %></p><h5 class="sva_subname"><%= tt.Saturday[5] %></h5><b class="cell_time">12:50-13:45</b></div>
+                                                <%}
+                                        }
+                                    }
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+                    <i class="fas fa-chevron-left" style="color: black;font-size: 40px;"></i>
+                </a>
+
+                <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+                    <i class="fas fa-chevron-right" style="color: black;font-size: 40px;"></i>
+                </a>
+            </div>
+
+            <div class="attend_hide">
+            <%
+                for(let i=0;i<att.length;i++){%>
+                    <p class="attend_entries1"><%= att[i].date.getDate() %></p>
+                    <p class="attend_entries2"><%= att[i].periodtime %></p>
+                    <p class="attend_entries3"><%= att[i].subjectname %></p>
+                <%}
+            %>
+            </div>
+
+            <div>
+                <%
+                    let subs = {};
+                    for(let i=0;i<tt.Monday.length;i++){
+                        if(tt.Monday[i]!="" && subs[tt.Monday[i]]!=0){
+                            subs[tt.Monday[i]]=0;
+                        }
+                        if(tt.Tuesday[i]!="" && subs[tt.Tuesday[i]]!=0){
+                            subs[tt.Tuesday[i]]=0;
+                        }
+                        if(tt.Wednesday[i]!="" && subs[tt.Wednesday[i]]!=0){
+                            subs[tt.Wednesday[i]]=0;
+                        }
+                        if(tt.Thursday[i]!="" && subs[tt.Thursday[i]]!=0){
+                            subs[tt.Thursday[i]]=0;
+                        }
+                        if(tt.Friday[i]!="" && subs[tt.Friday[i]]!=0){
+                            subs[tt.Friday[i]]=0;
+                        }
+                        if(tt.Saturday[i]!="" && subs[tt.Saturday[i]]!=0){
+                            subs[tt.Saturday[i]]=0;
+                        }
+                    }
+
+                    for(let i=0;i<att.length;i++){
+                        let a = att[i].subjectname;
+                        if(subs.hasOwnProperty(a)){
+                            subs[a]=subs[a]+1;
+                        }
+                    }
+                    
+                    let subsarr = Object.keys(subs);
+                    subsarr.sort();
+                %>
+
+                <table class="table subject_table table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Subject Name</th>
+                            <th>Your Attendance</th>
+                            <th>Total Attendance</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            for(let i=0;i<subsarr.length;i++){%>
+                                <tr class="table_rows_att">
+                                    <td class="class_name"><%= subsarr[i] %></td>
+                                    <td><%= subs[subsarr[i]] %></td>
+                                    <%
+                                        let n = subsarr[i].includes("LAB");
+                                        let tot = 0;
+                                        if(n)
+                                            tot=8;
+                                        else
+                                            tot=18;
+                                    %>
+                                    <td><%= tot %></td>
+                                    <td><%= ((subs[subsarr[i]]/tot)*100).toFixed(2) %>%</td>
+                                </tr>
+                            <%}
+                        %>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>
+
+</body>
+<script src="scripts/StudentViewAttendance.js" type="text/javascript"></script>
+</html>

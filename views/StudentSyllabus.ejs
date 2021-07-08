@@ -1,0 +1,35 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarS") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarStudent") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main" style="margin-bottom: 30px;padding-bottom: 30px;">
+            <h2 style="padding: 20px;">Syllabus</h2>
+            <div>
+                <%
+                    for(let i=0;i<syl.length;i++){
+                        let tot = syl[i].done.length+syl[i].notdone.length;
+                        let per = (syl[i].done.length/tot)*100;
+                        %>
+                        <div class="card stu_syl_card">
+                            <h4><%= syl[i].subjectname %></h4>
+                            <div class="progress" style="height:25px;width:85%;">
+                                <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: <%= per.toFixed(2) %>%;height: 25px;animation-direction: reverse;"><%= per.toFixed(2) %>%</div>
+                            </div>
+                            <p>Topics Completed: <%= syl[i].done.length %><br>Topics Remaining: <%= syl[i].notdone.length %></p>
+                        </div>
+                    <%}
+                %>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[3].classList.add("active_sidebar");
+</script>
+</html>

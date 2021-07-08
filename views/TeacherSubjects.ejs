@@ -1,0 +1,29 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarT") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarTeacher") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main">
+            <h2 style="padding: 20px;">Your Subjects</h2>
+            <div class="teacher_subjects_main">
+                <%
+                    subs.forEach(function(sub){%>
+                        <div class="card">
+                            <div class="card-body" style="width:275px">
+                                <h3><%= sub %></h3>
+                            </div>
+                        </div>
+                    <%});
+                %>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[0].classList.add("active_sidebar");
+</script>
+</html>

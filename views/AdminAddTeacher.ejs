@@ -1,0 +1,38 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarA") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarAdmin") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main">
+            <h2 class="admin_add_heading">Add Teacher</h2>
+
+            <form action="/AdminAddTeacher" method="POST">
+                <div class="form-group row">
+                    <label class="col-md-3">Email:</label><input type="email" class="form-control col-md-8" name="email" required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Full Name:</label><input type="text" class="form-control col-md-8" name="fullname"  required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Teacher ID:</label><input type="text" class="form-control col-md-8" name="teacherid" required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Password:</label> <input type="password" class="form-control col-md-8" name="password" required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Mobile Number:</label> <input type="text" class="form-control col-md-8" name="mobileno"  required>
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-lg admin_add_submit">Add Teacher</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[1].classList.add("active_sidebar");
+</script>
+</html>

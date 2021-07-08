@@ -1,0 +1,83 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarA") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarAdmin") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main" style="margin-bottom: 30px;">
+            <h2 class="admin_add_heading">Add Student</h2>
+            
+            <form action="/AdminAddStudent" method="POST">
+                <div class="form-group row">
+                    <label class="col-md-3">Email:</label><input type="email" class="form-control col-md-8" name="email" required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Full Name:</label><input type="text" class="form-control col-md-8" name="fullname"  required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Roll No:</label><input type="text" class="form-control col-md-8" name="rollno" required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Password:</label><input type="password" class="form-control col-md-8" name="password" required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Mobile Number:</label><input type="text" class="form-control col-md-8" name="mobileno"  required>
+                </div>
+                <div class="form-group row">
+                        <label class="col-md-3">Branch:</label>
+                        <select name="branch" class="form-control col-md-8">
+                            <option value="CSE">Computer Science Engineering</option>
+                            <option value="IT">Information Technology Engineering</option>
+                        </select>
+                </div>
+                <div class="form-group row">
+                        <label class="col-md-3">Year:</label>
+                        <select name="year" class="form-control col-md-8" id="year">
+                            <option value="2">Second Year</option>
+                            <option value="3">Third Year</option>
+                            <option value="4">Fourth Year</option>
+                        </select>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Semester:</label>
+                    <select name="semester" class="form-control col-md-8" id="sem">
+                        <option value="3">Third Semester</option>
+                        <option value="4">Fourth Semester</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Group:</label>
+                    <select name="group" class="form-control col-md-8">
+                      <option value="A1">A1</option>
+                      <option value="A2">A2</option>
+                    </select>
+                </div>
+    
+                <button type="submit" class="btn btn-primary btn-lg admin_add_submit">Add Student</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[0].classList.add("active_sidebar");
+
+    let y = document.querySelector("#year");
+    let sem = document.querySelector("#sem");
+
+    y.addEventListener("change",()=>{
+        let n = y.value;
+        if(n=="2"){
+        sem.innerHTML="<option value='3'>Third Semester</option><option value='4'>Fourth Semester</option>";
+        }
+        else if(n=="3"){
+        sem.innerHTML="<option value='5'>Fifth Semester</option><option value='6'>Sixth Semester</option>";
+        }
+        else{
+        sem.innerHTML="<option value='7'>Seventh Semester</option><option value='8'>Eighth Semester</option>";
+        }
+    });
+</script>
+</html>

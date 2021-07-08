@@ -1,0 +1,54 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarS") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarStudent") -%>
+    <div class="all_home_content">
+        <div class="student_class_main">
+            <div class="class_main_heading">
+                <h2><%= year %>
+                  <%
+                    if(year==2){%>
+                      <sup>nd</sup>
+                    <%}
+                    else if(year==3){%>
+                      <sup>rd</sup>
+                    <%}
+                    else if(year==4){%>
+                      <sup>th</sup>
+                    <%}%>
+                 Year <%= semester %>
+                 <%
+                    if(semester==3){%>
+                      <sup>rd</sup>
+                    <%}
+                    else{%>
+                      <sup>th</sup>
+                    <%} 
+                 %>
+                 Semester (<%= branch %>)</h2>
+            </div>
+            <div>
+                <%
+                  classmates.forEach(function(classmate){%>
+                    <div class="card" style="width:200px">
+                      <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= classmate.fullname %></h4>
+                        <p class="card-text" style="margin: 0;">Roll No.: <%= classmate.rollno %></p>
+                        <p class="card-text">Email: <%= classmate.email %></p>
+                      </div>
+                    </div>
+                  <%})
+                %>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[2].classList.add("active_sidebar");
+</script>
+</html>

@@ -1,0 +1,50 @@
+<%- include("partials/Header") -%>
+
+<div class="container-fluid register_main">
+  <div class="row">
+    <div class="container">
+        <a class="btn btn-info back_button" href="/ChoiceT">Back</a>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-5 mx-auto">
+        <div class="card reg">
+          <div class="card-body">
+              <div class="card-title" style="text-align: center;">
+                  <h1 class="pics" style="font-size: 2rem;">Teacher</h1>
+                  <h3>Register</h3>
+              </div>
+            <form action="/TeacherRegister" method="POST">
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="fullname" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="teacherid" placeholder="Teacher ID" pattern="[0-9]{6}" required>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="mobileno" placeholder="Mobile No" pattern="[789][0-9]{9}" required>
+              </div>
+              <center>
+                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+              </center>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+              <div class="card-title" style="margin: 0;text-align:center;">
+                <p style="margin: 0;">Have an account? <a href="/TeacherLogin">Log in</a></p>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<%- include("partials/Footer") -%>

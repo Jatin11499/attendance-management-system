@@ -1,0 +1,58 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarT") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarTeacher") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main">
+            <h2 style="padding: 20px;">Take Attendance</h2>
+
+            <table class="table table-hover table_tta">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Subject Name</th>
+                        <th>Date</th>
+                        <th>Roll No.</th>
+                        <th>Student Name</th>
+                        <th>Mark Attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        for(let i=0;i<attend.length;i++){%>
+                            <tr class="table_rows">
+                                <td><%= attend[i].subjectname %></td>
+                                <td>
+                                    <%
+                                        let d = attend[i].date;
+                                        let date = d.getDate();
+                                        let month = d.getMonth()+1;
+                                        let year = d.getFullYear();
+                                        let fullDate = date+"/"+month+"/"+year;%>
+                                        <%= fullDate %>
+                                </td>
+                                <td><%= attend[i].rollno %></td>
+                                <td><%= attend[i].studentname %></td>
+                                <td>
+                                    <form action="/TeacherTakeAttendance?teacherid=<%= teacherid %>&_id=<%= attend[i]._id %>&status=confirmed" method="POST" style="display: inline-block;">
+                                        <button class="btn btn-success" type="submit">Present</button>
+                                    </form>
+                                    <form action="/TeacherTakeAttendance?teacherid=<%= teacherid %>&_id=<%= attend[i]._id %>&status=rejected" method="POST" style="display: inline-block;">
+                                        <button class="btn btn-danger" type="submit">Absent</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <%}
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[1].classList.add("active_sidebar");
+</script>
+</html>

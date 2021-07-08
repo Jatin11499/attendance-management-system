@@ -1,0 +1,39 @@
+<%- include("partials/Header") -%>
+<%- include("partials/NavbarT") -%>
+
+<div class="all_home_main">
+    <%- include("partials/SidebarTeacher") -%>
+    <div class="all_home_content">
+        <div class="student_schedule_main" style="padding-bottom: 30px;margin-bottom: 30px;">
+            <h2 style="padding-top: 20px; padding-bottom: 10px;">Syllabus</h2>
+            <%
+                for(let j=0;j<syl.length;j++){%>
+                <div class="card" style="width: 90%;margin: auto;margin-bottom: 20px;">
+                    <h4 class="syl_sub_heading"><%= syl[j].subjectname %></h4>
+                    <div class="syl_sub_topics">
+                        <h5>Completed:</h5>
+                        <%for(let i=0;i<syl[j].done.length;i++){%>
+                            <form action="/TeacherSyllabusDone?teacherid=<%= teacherid %>&subjectname=<%= syl[j].subjectname %>&topicname=<%= syl[j].done[i] %>" method="POST">
+                                <p class="p_done"><%= syl[j].done[i] %> <button class="btn" type="submit"><i class="fas fa-times" style="color: black;"></i></button></p>
+                            </form>
+                        <%}%>
+
+                        <h5>Not Completed:</h5>
+                        <%for(let i=0;i<syl[j].notdone.length;i++){%>
+                            <form action="/TeacherSyllabusNotDone?teacherid=<%= teacherid %>&subjectname=<%= syl[j].subjectname %>&topicname=<%= syl[j].notdone[i] %>" method="POST">
+                                <p class="p_notdone"><%= syl[j].notdone[i] %> <button class="btn" type="submit"><i class="fas fa-check"></i></button></p>
+                            </form>
+                        <%}%>
+                    </div>
+                </div>
+             <%}%>  
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    let sideLinks = document.querySelectorAll(".all_sidebar_links");
+    sideLinks[3].classList.add("active_sidebar");
+</script>
+</html>

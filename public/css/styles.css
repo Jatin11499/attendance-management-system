@@ -1,0 +1,476 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Acme', sans-serif;
+}
+
+body{
+    background-color: rgb(236, 236, 236);
+}
+
+.home_main{
+    height: 100vh;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.home_main_logo{
+    margin-bottom: 20px;
+    width: 150px;
+}
+
+.home_main_buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.home_main_buttons > a{
+    width: 150px;
+    font-size: 1.5rem;
+    border: 2px solid #007bff;
+    font-weight: 600;
+}
+
+.home_main_buttons > a:hover{
+    background-color: white;
+    color: #007bff;
+}
+
+.home_main_title{
+    font-size: 50px;
+}
+
+.home_main > h3{
+    margin: 20px 0;
+}
+
+.choice_main{
+    height: 100vh;
+}
+
+.choice_main > div{
+    width: 100%;
+    text-align: center;
+    margin-top: 15vh;
+}
+
+.choice_main_buttons > a{
+    font-size: 2rem;
+    border: 2px solid #007bff;
+    font-weight: 600;
+    width: 200px;
+    margin: 20px;
+}
+
+.choice_main_buttons > a:hover{
+    background-color: white;
+    color: #007bff;
+}
+
+.back_button{
+    margin-top: 30px;
+    width: 100px;
+    font-weight: 500;
+}
+
+.choice_image{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.login_main{
+    height: 100vh;
+}
+
+.log{
+    top: 30%;
+    transform: translate(0,-25%);
+    margin-bottom: 80px;
+}
+
+.index-head{
+    font-size:4rem;
+    color: black;
+}
+
+.reg{
+    top: 25%;
+    transform: translate(0,-25%);
+    margin-bottom: 50px;
+}
+
+.register_main{
+    margin-bottom: 25px;
+}
+
+.nav_right > ul{
+    margin-left: auto;
+}
+
+.navbar_right_items{
+    color: white !important;
+    font-size: 1.25rem;
+}
+
+.navbar_right_items:hover{
+    color: rgb(23, 238, 238) !important;
+}
+
+.navbar-brand{
+    font-weight: 500;
+    font-size: 1.35rem;
+    margin: 5px 5px 5px 25px;
+}
+
+.active{
+    border-bottom: 5px solid white;
+}
+
+.navbar{
+    padding: 0;
+    box-shadow: 0px 12px 34px -4px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 12px 34px -4px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 12px 34px -4px rgba(0,0,0,0.25);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-item{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.nav-item:hover{
+    border-bottom: 5px solid rgb(23, 238, 238);
+}
+
+.all_home_main{
+    display: flex;
+    width: 100%;
+}
+
+.all_sidebar{
+    padding-top: 52px;
+    flex: 0.25;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+    box-shadow: 10px 0px 34px -4px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 10px 0px 34px -4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 0px 34px -4px rgba(0,0,0,0.5);
+    min-width: 25%;
+    min-height: 100vh;
+}
+
+.AD{
+    padding: 15px 20px;
+    color: seagreen;
+    margin: 0;
+    box-shadow: 0px 5px 14px -4px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 5px 14px -4px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 14px -4px rgba(0,0,0,0.25);
+    font-size: 1.75rem;
+}
+
+.AD:hover{
+    text-decoration: none;
+    color: seagreen;
+}
+
+.all_home_content{
+    flex: 0.75;
+    text-align: center;
+    padding-top: 52px;
+}
+
+.all_home_content > h1{
+    font-size: 4rem;
+}
+
+.all_home_content > h2{
+    font-size: 3.5rem;
+}
+
+.all_welcome{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.all_sidebar_links{
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: 0.25s all ease-in-out;
+}
+
+.all_sidebar_links:hover{
+    background-color: rgb(221, 221, 221);
+    text-decoration: none;
+}
+
+.all_sidebar_links > i{
+    margin-right: 10px;
+}
+
+.navbar_right_items > i{
+    margin-right: 5px;
+}
+
+.student_schedule_main, .student_class_main{
+    width: 90%;
+    background-color: white;
+    margin: auto;
+    box-shadow: 0px 0px 46px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 46px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 46px -8px rgba(0,0,0,0.75);
+    margin-top: 45px;
+    min-height: 80vh;
+}
+
+.active_sidebar{
+    background-color: lightblue;
+    color: darkblue;
+}
+
+.student_class_main > div{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    margin-bottom: 45px;
+}
+
+.student_class_main > div > div{
+    margin: 10px auto 10px auto;
+}
+
+.class_main_heading{
+    display: inline !important;
+    margin: 20px;
+}
+
+.class_main_heading > h3{
+    margin: 0;
+}
+
+.admin_add_heading{
+    padding: 20px 0;
+}
+
+.admin_add_submit{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#message {
+    display:none;
+    position: relative;
+    margin-top: 15px;
+}
+  
+#message p {
+    font-size: 15px;
+}
+
+.valid {
+    color: green;
+}
+  
+.valid:before {
+    position: relative;
+    left: -5px;
+    content: "✔";
+}
+
+.invalid {
+    color: red;
+}
+  
+.invalid:before {
+    position: relative;
+    left: -5px;
+    content: "✖";
+}
+
+.change_pass_heading{
+    padding: 20px 0;
+}
+
+.table_tta{
+    border-bottom: 1px solid lightgray;
+}
+
+.table_tta td, .table_ss td, .table_ss th{
+    vertical-align: middle;
+}
+
+.teacher_subjects_main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin: 0 10px 10px 10px;
+}
+
+.teacher_subjects_main > div{
+    margin: 0px 10px 20px 10px;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+}
+
+.teacher_subjects_main > div > div{
+    margin: auto;
+}
+
+.pass_toggle_btn{
+    outline: none;
+    box-shadow: none !important;
+}
+
+.student_view_main{
+    width: fit-content !important;
+    text-align: left;
+    margin: auto !important;
+}
+
+.student_view_main > div{
+    height: 65px;
+    width: 65px;
+    border: 1px solid gray;
+    display: inline-block !important;
+    margin-bottom: 2px;
+}
+
+.student_view_main > div > p{
+    padding-left: 5px;
+    margin: 0;
+    height: 20px;
+    font-size: 12px;
+}
+
+.student_view_main > div > h5{
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.carousel{
+    width: 85%;
+    margin: auto;
+}
+
+.carousel-item .card .card-body{
+    margin-bottom: 20px;
+}
+
+.student_acc{
+    width: 65%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.sva_subname{
+    width: fit-content !important;
+    margin: auto;
+}
+
+.day_title{
+    margin: auto !important;
+}
+
+.day_title > p{
+    width: 65px;
+    display: inline-block !important;
+}
+
+.subject_table{
+    margin-top: 55px;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+}
+
+.table_rows_att{
+    padding: 0px;
+}
+
+.table_rows_att > td{
+    padding: 10px;
+}
+
+.teacher_att_sub{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.syl_sub_heading{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.syl_sub_topics{
+    text-align: left;
+    width: 90%;
+    margin: auto;
+}
+
+.syl_sub_topics > form{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.syl_sub_topics > form > p{
+    border: 1px solid #17a2b8;
+    background-color: #17a2b8;
+    color: white;
+    padding-left: 5px;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+.p_done{
+    background-color: lightgray !important;
+    border-color: lightgray !important;
+    color: black !important;
+}
+
+.p_done:hover{
+    border-color: #A8A8A8 !important;
+    background-color: #A8A8A8 !important;
+}
+
+.p_notdone:hover{
+    border-color: #006666;
+    background-color: #006666;
+}
+
+.syl_sub_topics > form > p > button{
+    padding: 0 10px 5px 10px;
+    color: white;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.progress{
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.stu_syl_card{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.contact_main{
+    background-color: white;
+    padding: 20px;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}

@@ -1,0 +1,95 @@
+<%- include("partials/Header") -%>
+
+<div class="container-fluid register_main">
+  <div class="row">
+    <div class="container">
+        <a class="btn btn-info back_button" href="/ChoiceS">Back</a>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-5 mx-auto">
+        <div class="card reg">
+          <div class="card-body">
+              <div class="card-title" style="text-align: center;">
+                  <h1 class="pics" style="font-size: 2rem;">Student</h1>
+                  <h3>Register</h3>
+              </div>
+            <form action="/StudentRegister" method="post">
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="fullname" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="rollno" placeholder="Student Roll No" required>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="mobileno" placeholder="Mobile No" pattern="[789][0-9]{9}" required>
+              </div>
+              <div class="form-group">
+                <select name="branch" class="form-control">
+                  <option value="CSE">Computer Science Engineering</option>
+                  <option value="IT">Information Technology Engineering</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="year" class="form-control" id="year">
+                  <option value="2">Second Year</option>
+                  <option value="3">Third Year</option>
+                  <option value="4">Fourth Year</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="semester" class="form-control" id="sem">
+                  <option value="3">Third Semester</option>
+                  <option value="4">Fourth Semester</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="group" class="form-control">
+                  <option value="A1">A1</option>
+                  <option value="A2">A2</option>
+                </select>
+              </div>
+              <center>
+                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+              </center>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+              <div class="card-title" style="margin: 0;text-align:center;">
+                <p style="margin: 0;">Have an account? <a href="/StudentLogin">Log in</a></p>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+</body>
+
+<script>
+  let y = document.querySelector("#year");
+  let sem = document.querySelector("#sem");
+
+  y.addEventListener("change",()=>{
+    let n = y.value;
+    if(n=="2"){
+      sem.innerHTML="<option value='3'>Third Semester</option><option value='4'>Fourth Semester</option>";
+    }
+    else if(n=="3"){
+      sem.innerHTML="<option value='5'>Fifth Semester</option><option value='6'>Sixth Semester</option>";
+    }
+    else{
+      sem.innerHTML="<option value='7'>Seventh Semester</option><option value='8'>Eighth Semester</option>";
+    }
+  });
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <p class="navbar-brand">Attendance Management System</p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse nav_right" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item teacher_nav_item">
+                <a class="nav-link navbar_right_items" href="/TeacherHome?teacherid=<%= teacherid %>"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item teacher_nav_item">
+                <a class="nav-link navbar_right_items" href="/AboutUsT?teacherid=<%= teacherid %>"><i class="fas fa-globe"></i> About Us</a>
+            </li>
+            <li class="nav-item teacher_nav_item">
+                <a class="nav-link navbar_right_items" href="/ContactUsT?teacherid=<%= teacherid %>"><i class="fas fa-mobile-alt"></i> Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar_right_items" href="/Logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<script>
+    let path = window.location.pathname;
+    let tni = document.querySelectorAll(".teacher_nav_item");
+
+    if(path=="/AboutUsT"){
+        tni[1].classList.add("active");
+    }
+    else if(path=="/ContactUsT"){
+        tni[2].classList.add("active");
+    }
+    else{
+        tni[0].classList.add("active");
+    }
+</script>

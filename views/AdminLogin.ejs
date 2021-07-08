@@ -1,0 +1,35 @@
+<%- include("partials/Header") -%>
+
+<div class="container-fluid login_main">
+    <div class="row">
+        <div class="container">
+            <a class="btn btn-info back_button" href="/ChoiceA">Back</a>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5 mx-auto">
+        <div class="card log">
+          <div class="card-body">
+            <div class="card-title" style="text-align:center;">
+                    <h1 class="index-head" style="font-size: 2rem;">Admin</h1>
+                    <h3>Login</h3>
+            </div>
+            <form action="/AdminLogin" method="POST">
+              <div class="form-group">
+                <input type="text" class="form-control" name="username" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+              <center>
+                <button type="submit" class="btn btn-primary btn-lg">Log in</button>
+              </center>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+<%- include("partials/Footer") -%>

@@ -313,7 +313,7 @@ body{
 
 .teacher_subjects_main{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 0 10px 10px 10px;
 }
 
@@ -696,12 +696,19 @@ body{
         padding-bottom: 20px !important;
     }
 
+    .teacher_subjects_main > .card{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .teacher_subjects_main > .card > .card-body{
         padding: 10px;
     }
 
     .teacher_subjects_main > .card > .card-body > h3{
         font-size: 20px;
+        width: auto;
     }
 
     .table_rows > td, .table_rows > td > form > button{
@@ -738,5 +745,11 @@ body{
 
     .navbar-brand{
         margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .teacher_subjects_main > .card > .card-body{
+        min-width: 100px !important;
     }
 }

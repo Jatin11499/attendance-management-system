@@ -12,7 +12,12 @@ body{
 .home_main{
     height: 100vh;
     text-align: center;
-    padding-top: 50px;
+}
+
+.home_main > div{
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
 }
 
 .home_main_logo{
@@ -186,6 +191,8 @@ body{
     flex: 0.75;
     text-align: center;
     padding-top: 52px;
+    overflow: auto;
+    height: 100vh;
 }
 
 .all_home_content > h1{
@@ -248,12 +255,9 @@ body{
 }
 
 .class_main_heading{
-    display: inline !important;
-    margin: 20px;
-}
-
-.class_main_heading > h3{
-    margin: 0;
+    display: block !important;
+    margin: 0 0 10px 0 !important;
+    padding-top: 20px;
 }
 
 .admin_add_heading{
@@ -473,4 +477,57 @@ body{
     position: relative;
     transform: translateY(-50%);
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .home_main_buttons{
+        flex-direction: column;
+    }
+
+    .home_main_buttons > a{
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .home_main_title{
+        font-size: 45px;
+    }
+
+    .back_button{
+        width: 125px;
+        height: 50px;
+        font-size: 1.35rem;
+    }
+
+    .log{
+        margin-top: 10%;
+    }
+
+    .all_home_main{
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .all_sidebar{
+        min-height: fit-content;
+        flex-direction: row;
+        overflow: auto;
+        flex: 0.15;
+    }
+
+    .active{
+        border-bottom: none;
+    }
+
+    .navbar_right_items:hover{
+        color: white !important;
+    }
+
+    .nav-item:hover{
+        border-bottom: none;
+    }
+
+    .all_home_content{
+        flex: 0.85;
+    }
 }

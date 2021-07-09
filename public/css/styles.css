@@ -246,7 +246,7 @@ body{
 
 .student_class_main > div{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 0.5fr));
     margin-bottom: 45px;
 }
 
@@ -487,10 +487,25 @@ body{
     .home_main_buttons > a{
         margin: auto;
         margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 400;
     }
 
     .home_main_title{
-        font-size: 45px;
+        font-size: 35px;
+    }
+
+    .home_main div h2{
+        font-size: 25px;
+    }
+
+    .home_main div h3{
+        font-size: 20px;
+    }
+
+    .choice_main_buttons > a{
+        font-size: 25px;
+        font-weight: 400;
     }
 
     .log{
@@ -544,8 +559,16 @@ body{
     }
 
     .all_welcome{
-        top: 30%;
-        transform: translateY(-30%);
+        top: 40%;
+        transform: translateY(-40%);
+    }
+
+    .awh1{
+        font-size: 45px !important;
+    }
+
+    .awh2{
+        font-size: 35px !important;
     }
 
     .student_schedule_main, .student_class_main{
@@ -606,5 +629,114 @@ body{
 
     #message{
         padding-bottom: 20px;
+    }
+
+    .AD{
+        font-size: 25px;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .th_sva{
+        font-size: 10px;
+    }
+
+    .table_rows_att > td{
+        font-size: 10px;
+    }
+
+    .subject_table{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .student_schedule_main h2, .student_class_main h2{
+        font-size: 20px;
+    }
+
+    .student_schedule_main h4{
+        font-size: 15px;
+    }
+
+    .carousel-item > .card > p{
+        font-size: 15px;
+    }
+
+    .sc_main > .card{
+        width: 150px !important;
+    }
+
+    .sc_main > .card > .card-body{
+        padding: 15px 10px;
+    }
+
+    .sc_main > .card > .card-body > h4{
+        font-size: 15px;
+    }
+
+    .sc_main > .card > .card-body > p{
+        font-size: 10px;
+    }
+
+    .stu_syl_card{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .up_input{
+        width: 75%;
+        margin: auto;
+    }
+
+    .submit_btn{
+        font-size: 15px;
+    }
+
+    .student_schedule_main > form{
+        padding-bottom: 20px !important;
+    }
+
+    .teacher_subjects_main > .card > .card-body{
+        padding: 10px;
+    }
+
+    .teacher_subjects_main > .card > .card-body > h3{
+        font-size: 20px;
+    }
+
+    .table_rows > td, .table_rows > td > form > button{
+        font-size: 10px;
+    }
+
+    .graphh{
+        height: 30vh !important;
+    }
+
+    .teacher_att_sub > h5{
+        font-size: 10px;
+    }
+
+    .syl_sub_topics > h5{
+        font-size: 15px;
+    }
+
+    .p_done, .p_notdone{
+        font-size: 10px;
+    }
+
+    .fa-times, .fa-check{
+        font-size: 10px;
+    }
+
+    .admin_add_submit{
+        margin-bottom: 0;
+    }
+
+    .student_nav_item, .admin_nav_item, .teacher_nav_item{
+        padding-left: 20px;
+    }
+
+    .navbar-brand{
+        margin-left: 20px;
     }
 }

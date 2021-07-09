@@ -531,6 +531,7 @@ body{
 
     .all_home_content{
         flex: 0.8;
+        padding-top: 20px;
     }
 
     .all_sidebar_links > i{
@@ -539,5 +540,46 @@ body{
 
     .all_sidebar_links .va{
         padding: 0 20px 0 25px;
+    }
+
+    .all_welcome{
+        top: 30%;
+        transform: translateY(-30%);
+    }
+
+    .student_schedule_main{
+        margin: auto;
+    }
+
+    .student_schedule_main{
+        min-height: fit-content;
+    }
+
+    .student_view_main > div{
+        height: 42px;
+        width: 42px;
+    }
+
+    .student_view_main > div > p{
+        font-size: 10px;
+        height: 12px;
+    }
+
+    .day_title > p{
+        font-size: 10px;
+        width: 35px;
+    }
+
+    .student_view_main > div > h5{
+        font-size: 9px;
+        margin-top: 5px;
+    }
+
+    .carousel-item > .card > p{
+        margin: 0;
+    }
+
+    .carousel-item > .card > .card-body{
+        padding: 10px;
     }
 }

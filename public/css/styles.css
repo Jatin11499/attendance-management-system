@@ -493,12 +493,6 @@ body{
         font-size: 45px;
     }
 
-    .back_button{
-        width: 125px;
-        height: 50px;
-        font-size: 1.35rem;
-    }
-
     .log{
         margin-top: 10%;
     }
@@ -512,7 +506,15 @@ body{
         min-height: fit-content;
         flex-direction: row;
         overflow: auto;
-        flex: 0.15;
+        flex: 0.2;
+    }
+
+    .all_sidebar_links{
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0px 5px 14px -4px rgba(0,0,0,0.25);
+        -webkit-box-shadow: 0px 5px 14px -4px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 5px 14px -4px rgba(0,0,0,0.25);
     }
 
     .active{
@@ -528,6 +530,14 @@ body{
     }
 
     .all_home_content{
-        flex: 0.85;
+        flex: 0.8;
+    }
+
+    .all_sidebar_links > i{
+        padding-left: 5px;
+    }
+
+    .all_sidebar_links .va{
+        padding: 0 20px 0 25px;
     }
 }

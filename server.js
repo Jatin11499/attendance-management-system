@@ -167,12 +167,21 @@ app.get("/StudentRegister",function(req,res){
 });
 
 app.post("/StudentRegister",function(req,res){
-    Student.create(req.body,function(err){
-        if(err){
-            console.log(err);
-        }
-        else{
-            res.redirect("/StudentHome?rollno="+req.body.rollno);
+    Student.findOne({rollno: req.body.rollno}, function(err,data){
+        if(!err){
+            if(!data){
+                Student.create(req.body,function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        res.redirect("/StudentHome?rollno="+req.body.rollno);
+                    }
+                });
+            }
+            else{
+                res.redirect("/StudentLogin");
+            }
         }
     });
 });
@@ -182,12 +191,21 @@ app.get("/TeacherRegister",function(req,res){
 });
 
 app.post("/TeacherRegister",function(req,res){
-    Teacher.create(req.body,function(err){
-        if(err){
-            console.log(err);
-        }
-        else{
-            res.redirect("/TeacherHome?teacherid="+req.body.teacherid);
+    Teacher.findOne({teacherid: req.body.teacherid}, function(err,data){
+        if(!err){
+            if(!data){
+                Teacher.create(req.body,function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        res.redirect("/TeacherHome?teacherid="+req.body.teacherid);
+                    }
+                });
+            }
+            else{
+                res.redirect("/TeacherLogin");
+            }
         }
     });
 });

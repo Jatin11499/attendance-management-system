@@ -507,6 +507,7 @@ body{
         flex-direction: row;
         overflow: auto;
         flex: 0.2;
+        padding-top: 42px;
     }
 
     .all_sidebar_links{
@@ -547,22 +548,20 @@ body{
         transform: translateY(-30%);
     }
 
-    .student_schedule_main{
-        margin: auto;
-    }
-
-    .student_schedule_main{
+    .student_schedule_main, .student_class_main{
         min-height: fit-content;
+        margin: auto;
+        margin-bottom: 20px;
     }
 
     .student_view_main > div{
-        height: 42px;
-        width: 42px;
+        height: 37px;
+        width: 37px;
     }
 
     .student_view_main > div > p{
-        font-size: 10px;
-        height: 12px;
+        font-size: 9px;
+        height: 11px;
     }
 
     .day_title > p{
@@ -571,7 +570,7 @@ body{
     }
 
     .student_view_main > div > h5{
-        font-size: 9px;
+        font-size: 8px;
         margin-top: 5px;
     }
 
@@ -581,5 +580,31 @@ body{
 
     .carousel-item > .card > .card-body{
         padding: 10px;
+    }
+
+    .navbar-brand{
+        font-size: 15px;
+    }
+
+    .sc_main{
+        margin: 0 !important;
+    }
+
+    .changep{
+        width: 70%;
+        margin-left: auto;
+    }
+
+    .pass_toggle_btn, .hptb{
+        margin-right: auto;
+        padding-right: 0;
+    }
+
+    .change_pass_main{
+        padding-bottom: 20px;
+    }
+
+    #message{
+        padding-bottom: 20px;
     }
 }

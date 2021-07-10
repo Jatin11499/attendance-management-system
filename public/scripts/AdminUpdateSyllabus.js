@@ -20,10 +20,10 @@ semList.addEventListener("change",()=>{
     let n = semList.value;
 
     if(n==3){
-        subList.innerHTML="<option>--Select--</option><option value='OOP'>OOP</option><option value='COSM'>COSM</option><option value='DS'>DS</option><option value='DSA'>DSA</option><option value='ADV. MATHS'>ADV. MATHS</option><option value='LD'>LD</option>";
+        subList.innerHTML="<option>--Select--</option><option value='OOP'>OOP</option><option value='COSM'>COSM</option><option value='DS'>DS</option><option value='DSA'>DSA</option><option value='AM'>ADV. MATHS</option><option value='LD'>LD</option>";
     }
     else if(n==4){
-        subList.innerHTML="<option>--Select--</option><option value='CA & MP'>CA & MP</option><option value='PPL'>PPL</option><option value='COMM. ENGG.'>COMM. ENGG.</option><option value='DBFS'>DBFS</option><option value='ADV. MATHS'>ADV. MATHS</option><option value='COA'>COA</option>";
+        subList.innerHTML="<option>--Select--</option><option value='CA & MP'>CA & MP</option><option value='PPL'>PPL</option><option value='CE'>COMM. ENGG.</option><option value='DBFS'>DBFS</option><option value='AM'>ADV. MATHS</option><option value='COA'>COA</option>";
     }
     else if(n==5){
         subList.innerHTML="<option>--Select--</option><option value='SP'>SP</option><option value='DBMS'>DBMS</option><option value='CN'>CN</option><option value='TOC'>TOC</option><option value='MP'>MP</option><option value='HCI'>HCI</option>";

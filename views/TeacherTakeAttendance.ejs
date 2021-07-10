@@ -4,10 +4,10 @@
 <div class="all_home_main">
     <%- include("partials/SidebarTeacher") -%>
     <div class="all_home_content">
-        <div class="student_schedule_main">
+        <div class="student_schedule_main" style="overflow: auto;margin-bottom: 20px;">
             <h2 style="padding: 20px;">Take Attendance</h2>
 
-            <table class="table table-hover table_tta">
+            <table class="table table-hover table_tta" style="margin-bottom: 0;">
                 <thead class="thead-light">
                     <tr>
                         <th class="th_sva">Subject Name</th>
@@ -35,10 +35,10 @@
                                 <td><%= attend[i].studentname %></td>
                                 <td>
                                     <form action="/TeacherTakeAttendance?teacherid=<%= teacherid %>&_id=<%= attend[i]._id %>&status=confirmed" method="POST" style="display: inline-block;">
-                                        <button class="btn btn-success" type="submit">Present</button>
+                                        <button class="btn btn-success btn_ttas" type="submit">Present</button>
                                     </form>
                                     <form action="/TeacherTakeAttendance?teacherid=<%= teacherid %>&_id=<%= attend[i]._id %>&status=rejected" method="POST" style="display: inline-block;">
-                                        <button class="btn btn-danger" type="submit">Absent</button>
+                                        <button class="btn btn-danger btn_ttas" type="submit">Absent</button>
                                     </form>
                                 </td>
                             </tr>

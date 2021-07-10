@@ -711,6 +711,10 @@ body{
         width: auto;
     }
 
+    .table_rows > td{
+        padding: 5px;
+    }
+
     .table_rows > td, .table_rows > td > form > button{
         font-size: 10px;
     }
@@ -745,6 +749,40 @@ body{
 
     .navbar-brand{
         margin-left: 20px;
+    }
+
+    .cnss{
+        font-size: 18px !important;
+    }
+
+    .about_main{
+        flex-direction: column !important;
+        margin-bottom: 10px;
+    }
+
+    .about_card{
+        margin: 10px 20px !important;
+    }
+
+    .contact_top{
+        margin-bottom: 20px;
+    }
+
+    .btn_ttas{
+        padding: 5px;
+        font-size: 8px !important;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .student_view_main > div{
+        height: 30px;
+        width: 30px;
+    }
+
+    .student_view_main > div > h5{
+        font-size: 6px;
+        margin-top: 2px;
     }
 }
 

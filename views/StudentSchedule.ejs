@@ -20,8 +20,8 @@
                             <form action="/StudentSchedule?rollno=<%= rollno %>&periodtime=<%= PeriodTime[i] %>&classname=<%= classes[i] %>&branch=<%= branch %>" method="POST">
                                 <tr class="table_rows">
                                     <th><%= PeriodTime[i] %></th>
-                                    <td class="class_name"><%= classes[i] %></td>
-                                    <td><button class="btn btn-success" type="submit" disabled>
+                                    <td class="class_name cnss"><%= classes[i] %></td>
+                                    <td><button class="btn btn-success submit_btn" type="submit" disabled>
                                         <%
                                             attend.forEach(function(att){
                                                 let d = att.date;

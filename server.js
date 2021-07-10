@@ -151,6 +151,7 @@ app.get("/StudentLogin",function(req,res){
 });
 
 app.post("/StudentLogin",function(req,res){
+    req.body.rollno=req.body.rollno.toUpperCase();
     Student.findOne(req.body, function(err,data){
         if(!err){
             if(data)
@@ -167,6 +168,7 @@ app.get("/StudentRegister",function(req,res){
 });
 
 app.post("/StudentRegister",function(req,res){
+    req.body.rollno=req.body.rollno.toUpperCase();
     Student.findOne({rollno: req.body.rollno}, function(err,data){
         if(!err){
             if(!data){
